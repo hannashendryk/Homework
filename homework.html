@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Ap</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 25px;
+            margin: 10px 0;
+        }
+        h2 {
+            text-align: center;
+            color: #1A64D6;
+            font-size: 35px;
+            margin: 0;
+        }
+        h3 {
+            text-align: center;
+            font-size: 35px;
+            margin: 10px 0;
+            
+        }
+        ul {
+            text-align: center;
+            padding: 0;
+       
+        }
+        li {
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+
+        }
+        li:hover {
+            background: #FFFBEF;
+        }
+        h4 {
+            font-size: 20px;
+        }
+
+        p {
+            font-family: 'Courier New';
+        }
+        button {
+            background: #1A64D6;
+            color: #FFFBEF;
+            border: 1px solid #1A64D6;
+            font-size: 15px;
+            display: block;
+            border-radius: 30px;
+            margin: 0 auto 20px auto;
+            padding: 20px 25px;
+            transition: all 200ms ease-in-out;
+        }
+        button:hover {
+            background: #FFFBEF;
+            color: #1A64D6;
+            cursor: pointer;
+        }
+
+        h5 {
+            text-align: center;
+            font-weight: normal;
+            font-size: medium;
+        }
+        .night-temperature {
+            font-weight: normal;
+        }
+
+        .day-temperature {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <font face="Helvetica">
+    <h1>⛅</h1> 
+    <h2>Currently 21° in Tokyo</h2> 
+    <h3><span class="night-temperature">13° /</span> 23°</h3>
+    <ul>
+        <li>
+            <h4>🌨Tomorrow</h4> <p>10° / <span class="day-temperature">22°</span></p>
+        </li>
+        <li>
+            <h4>🌥Saturday </h4><p>15° / <span class="day-temperature">17°</span></p>
+        </li>
+        <li>
+            <h4>☀Sunday</h4><p>25° / <span class="day-temperature">28°</span></p>
+        </li>
+    </ul>
+    <button>
+        Change city
+    </button>
+    </font>
+    <font face="Courier New">
+        <h5>
+        Coded be Hanna Shendryk
+        </h5>
+    </font>
+    <script>
+        function changeCity() {
+        
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it");
+
+        let h1 = document.querySelector("h1");
+        if (temperature >= 0) {
+        h1.innerHTML = "😃";
+    } else {
+        h1.innerHTML = "🥶";
+    }
+
+        let h2 = document.querySelector("h2");
+        h2.innerHTML = "Currently " + temperature + "° in " + city;
+    }
+
+    let changeButton = document.querySelector("button");
+    changeButton.addEventListener("click", changeCity);
+    </script>
+</body>
+</html>
